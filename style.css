@@ -19,7 +19,101 @@
 
 .container {
     height: calc(100% - 50px);
-    width: calc(100% - 500px);
+    /* width: calc(100% - 500px); */
+    width: 70%;
     border: 1px solid black;
     z-index: 99999;
+}
+
+.aside {
+    height: 100%;
+    float: left;
+    width: 30%;
+    border-right: 1px solid black;
+    /* overflow: auto; */
+}
+
+.container::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.msg-container {
+    height: 100%;
+    float: left;
+    width: 70%;
+}
+
+.account-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(234, 234, 234);
+    border: 1px solid black;
+    height: 70px;
+    /* position: fixed;
+    z-index: 999; */
+}
+
+.account-details-img {
+    display: flex;
+    justify-content: center;
+    width: 20%;
+}
+
+.account-details img {
+    height: 60px;
+}
+
+.account-details-icons {
+    width: 25%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.messages-alert {
+    background-color: rgb(142, 218, 252);
+    border: 1px solid black;
+    height: 90px;
+    display: flex;
+    align-items: center;
+}
+
+.messages-alert-wrapper {
+    
+}
+
+.bell-icon-wrapper {
+    display: flex;
+    justify-content: space-around;
+    width: 25%;
+}
+
+.bell-icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+}
+
+.fa-bell-slash {
+    color: rgb(142, 218, 252);
+}
+
+.searchbar {
+    background-color: rgb(255, 255, 255);
+    border: 1px solid black;
+    height: 50px;
+    /* position: fixed;
+    z-index: 999; */
+}
+
+.contacts {
+    background-color: rgb(255, 255, 255);
+    border: 1px solid black;
+    height: 80px;
 }
