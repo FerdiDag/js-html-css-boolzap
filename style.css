@@ -30,7 +30,7 @@
     float: left;
     width: 30%;
     border-right: 1px solid black;
-    /* overflow: auto; */
+    overflow: auto;
 }
 
 .container::after {
@@ -80,9 +80,7 @@
     align-items: center;
 }
 
-.messages-alert-wrapper {
-    
-}
+.messages-alert-wrapper {}
 
 .bell-icon-wrapper {
     display: flex;
@@ -110,10 +108,47 @@
     height: 50px;
     /* position: fixed;
     z-index: 999; */
+    display: flex;
+}
+
+.searchbar-container {
+    display: flex;
+    align-items: center;
+    width: 70%;
+    justify-content: space-around;
+}
+
+.search-icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
 }
 
 .contacts {
     background-color: rgb(255, 255, 255);
     border: 1px solid black;
     height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+.face-wrapper {
+    background-color: rgb(242, 242, 242);
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contacts img {
+    height: 50px;
+}
+
+.contacts-container {
+    display: flex;
+    justify-content: space-around;
+    width: 25%;
 }
