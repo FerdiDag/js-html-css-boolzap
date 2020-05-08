@@ -192,7 +192,7 @@
 .chat-container {
     width: 80%;
     margin: auto;
-    height: calc(100% - 70px);
+    padding-top: 50px;
 }
 
 .user-chat {
