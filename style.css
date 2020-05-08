@@ -143,6 +143,10 @@
     justify-content: center;
 }
 
+.face-wrapper.active {
+    background-color: white;
+}
+
 .contacts img {
     height: 50px;
 }
@@ -155,4 +159,52 @@
 
 .contacts-name p {
     color: rgb(213, 215, 218);
+}
+
+.contact-name {
+    display: flex;
+    align-items: center;
+    height: 70px;
+    background-color: rgb(234, 234, 234);
+}
+
+.contact-name img {
+    height: 50px;
+}
+
+.msg-container-info {
+    display: flex;
+    justify-content: space-around;
+    width: 10%;
+}
+
+.chat {
+    background-image: url("wallpaper.jpg");
+    height: calc(100% - 160px);
+    background-repeat: repeat;
+    background-size: contain;
+}
+
+.chatbox {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(234, 234, 234);
+    height: 90px;
+}
+
+.chatbox-left {
+    display: flex;
+    justify-content: center;
+    width: 25%;
+}
+
+.chatbox-center {
+    width: 50%;
+}
+
+.chatbox-right {
+    width: 25%;
+    display: flex;
+    justify-content: center;
 }
