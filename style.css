@@ -172,17 +172,37 @@
     height: 50px;
 }
 
+.msg-container {}
+
 .msg-container-info {
     display: flex;
     justify-content: space-around;
     width: 10%;
 }
 
+.contact-name-icon-container {}
+
 .chat {
     background-image: url("wallpaper.jpg");
     height: calc(100% - 160px);
     background-repeat: repeat;
     background-size: contain;
+}
+
+.chat-container {
+    width: 80%;
+    margin: auto;
+    height: calc(100% - 70px);
+}
+
+.user-chat {
+    float: left;
+    clear: both;
+}
+
+.reply {
+    float: right;
+    clear: both;
 }
 
 .chatbox {
@@ -196,15 +216,26 @@
 .chatbox-left {
     display: flex;
     justify-content: center;
-    width: 25%;
+    width: 10%;
 }
 
 .chatbox-center {
-    width: 50%;
+    width: 80%;
 }
 
 .chatbox-right {
-    width: 25%;
+    width: 10%;
     display: flex;
     justify-content: center;
+}
+
+input {
+    height: 70px;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
 }
