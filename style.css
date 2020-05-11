@@ -216,6 +216,12 @@ body {
 .reply {
     float: right;
     clear: both;
+    /* background-color: rgb(214, 248, 187);
+    padding: 20px;
+    border-radius: 10px; */
+}
+
+.risposta {
     background-color: rgb(214, 248, 187);
     padding: 20px;
     border-radius: 10px;
@@ -253,6 +259,11 @@ input {
     border: 1px solid #ccc;
     border-radius: 10px;
     box-sizing: border-box;
+}
+
+#input-button {
+    border: none;
+    cursor: pointer;
 }
 
 .name-sub {
