@@ -117,8 +117,6 @@ body {
     display: flex;
 }
 
-
-
 #search {
     height: 30px;
     width: 100%;
@@ -127,7 +125,6 @@ body {
     display: inline-block;
     border: 1px solid white;
     border-radius: 10px;
-
 }
 
 .searchbar-container {
@@ -227,12 +224,9 @@ body {
     border-radius: 10px;
 }
 
-
-
 .reply-container {
     float: right;
     clear: both;
-
     /* background-color: rgb(214, 248, 187);
     padding: 20px;
     border-radius: 10px; */
@@ -276,9 +270,7 @@ body {
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 10px;
-
 }
-
 
 #input-button {
     border: none;
