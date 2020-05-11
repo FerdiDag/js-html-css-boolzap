@@ -33,7 +33,7 @@ $("#input-button").click(function() {
     console.log(messaggio);
     //se il messaggio non è vuoto, allora può essere speidto
     if (messaggio != '') {
-        $('.reply').append("<p class=risposta>" + messaggio + "</p>")
+        $('.reply-container').append("<p class=reply>" + messaggio + "</p>")
         $('#input-text').val('');
     }
 
