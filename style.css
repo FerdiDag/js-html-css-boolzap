@@ -29,6 +29,7 @@ body {
     z-index: 99999;
 }
 
+/* inizio sezione aside */
 .aside {
     height: 100%;
     float: left;
@@ -50,6 +51,7 @@ body {
     width: 70%;
 }
 
+/* sezione dettagli utente in alto a dx */
 .account-details {
     display: flex;
     align-items: center;
@@ -78,6 +80,7 @@ body {
     justify-content: space-around;
 }
 
+/* sezione alert blu */
 .messages-alert {
     background-color: rgb(142, 218, 252);
     /* border: 1px solid black; */
@@ -108,6 +111,7 @@ body {
     color: rgb(142, 218, 252);
 }
 
+/* sezione searchbar in alto a dx */
 .searchbar {
     background-color: rgb(255, 255, 255);
     /* border: 1px solid black; */
@@ -141,12 +145,19 @@ body {
     width: 200px;
 }
 
+/* inizio sezione contatti */
 .contacts {
     background-color: rgb(255, 255, 255);
     /* border: 1px solid black; */
     height: 80px;
     display: flex;
     align-items: center;
+}
+
+.contacts-container {
+    display: flex;
+    justify-content: space-around;
+    width: 25%;
 }
 
 .face-wrapper {
@@ -169,12 +180,6 @@ body {
 
 .contacts.active {
     background-color: #e9ebea;
-}
-
-.contacts-container {
-    display: flex;
-    justify-content: space-around;
-    width: 25%;
 }
 
 .contacts-name p {
@@ -202,6 +207,8 @@ body {
 
 .contact-name-icon-container {}
 
+
+/* inizio sezione chat parte destra */
 .chat {
     background-image: url("wallpaper.jpg");
     height: calc(100% - 160px);
@@ -275,6 +282,7 @@ body {
 #input-button {
     border: none;
     cursor: pointer;
+    background-color: rgb(243, 238, 234);
 }
 
 .name-sub {

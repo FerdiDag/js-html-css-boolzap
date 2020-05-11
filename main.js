@@ -33,8 +33,19 @@ $("#input-button").click(function() {
     console.log(messaggio);
     //se il messaggio non è vuoto, allora può essere speidto
 
-    if (messaggio != '') {
+    if (!messaggio.replace(/\s/g, '').length) {
+        console.log('stringa non ok');
+    } else {
         $('.reply-container').append("<p class=reply>" + messaggio + "</p>");
-        $('#input-text').val('');
+          $('#input-text').val('');
     }
+
 });
+
+
+
+
+// if (messaggio != '') {
+//     $('.reply-container').append("<p class=reply>" + messaggio + "</p>");
+//     $('#input-text').val('');
+// }
