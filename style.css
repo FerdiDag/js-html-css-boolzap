@@ -25,6 +25,7 @@ body {
     height: calc(100% - 50px);
     /* width: calc(100% - 500px); */
     width: 80%;
+
     /* border: 1px solid black; */
     z-index: 99999;
 }
@@ -135,16 +136,12 @@ body {
 .searchbar-container {
     display: flex;
     align-items: center;
-    width: 70%;
+    width: 80%;
+    margin: auto;
     justify-content: space-around;
 }
 
-.search-icon-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 200px;
-}
+
 
 /* inizio sezione contatti */
 .contacts {

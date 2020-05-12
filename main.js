@@ -69,12 +69,26 @@ function auto_reply() {
 
 // ​scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo icontatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> Scrivo“mar” rimangono solo Marco e Martina)
 $("#search").on("keyup", function() {
-   var value = $(this).val().toLowerCase();
-   $(".contacts-name *").filter(function() {
-     $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-   });
- });
+    var value = $(this).val().toLowerCase();
+    $(".contacts-name *").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
 
+    });
+});
+
+
+
+// intercetto il focus nell'input della searchbar
+$('#search').focus(function() {
+    $('.searchbar-container i').hide();
+});
+
+
+
+// intercetto la perdita di focus della searchbar
+$('#search').blur(function() {
+    $('.searchbar-container i').show();
+});
 
 
 
