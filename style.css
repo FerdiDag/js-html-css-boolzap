@@ -129,6 +129,7 @@ body {
     display: inline-block;
     border: 1px solid white;
     border-radius: 10px;
+    outline: none;
 }
 
 .searchbar-container {
@@ -226,9 +227,16 @@ body {
 .user-chat-container {
     float: left;
     clear: both;
+    /* background-color: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 10px; */
+}
+
+.user-chat {
     background-color: rgb(255, 255, 255);
     padding: 20px;
     border-radius: 10px;
+    margin: 20px;
 }
 
 .reply-container {
@@ -277,12 +285,14 @@ body {
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 10px;
+    outline: none;
 }
 
 #input-button {
     border: none;
     cursor: pointer;
     background-color: rgb(243, 238, 234);
+    outline: none;
 }
 
 .name-sub {
@@ -291,4 +301,8 @@ body {
 
 .chat-container-info>.name-sub {
     color: rgb(177, 176, 175);
+}
+
+.template {
+    display: none;
 }

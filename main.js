@@ -36,15 +36,42 @@ $("#input-button").click(function() {
     if (!messaggio.replace(/\s/g, '').length) {
         console.log('stringa non ok');
     } else {
-        $('.reply-container').append("<p class=reply>" + messaggio + "</p>");
-          $('#input-text').val('');
-    }
+        // faccio una copia del template per creare un nuovo messaggio
+        var nuovo_messaggio = $('.template .message').clone();
+        // aggiungo la classe "reply" al messaggio
+        nuovo_messaggio.addClass('reply');
+        // inserisco il testo dell'utente nella p "message-text"
+        nuovo_messaggio.children('.message-text').text(messaggio);
+        // inserisco il nuovo messaggio nel contenitore dei messaggi di risposta
+        $('.reply-container').append(nuovo_messaggio);
+        // resetto l'input
+        $('#input-text').val('');
 
+    }
 });
 
-
-
-
+// function auto_reply() {
+//     var messaggio = ('Ok');
+//     console.log(messaggio);
+//
+//
+//
+//         // faccio una copia del template per creare un nuovo messaggio
+//         var nuovo_messaggio = $('.template .message').clone();
+//         // aggiungo la classe "reply" al messaggio
+//         nuovo_messaggio.addClass('user-chat');
+//         // inserisco il testo dell'utente nella p "message-text"
+//         nuovo_messaggio.children('.message-text').text(messaggio);
+//         // inserisco il nuovo messaggio nel contenitore dei messaggi di user-chat
+//         $('.user-chat-container').append(nuovo_messaggio);
+//
+//
+//
+// }
+//
+//
+//
+//
 // if (messaggio != '') {
 //     $('.reply-container').append("<p class=reply>" + messaggio + "</p>");
 //     $('#input-text').val('');
