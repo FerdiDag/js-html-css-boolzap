@@ -234,19 +234,15 @@ body {
     border-radius: 10px;
 }
 
-.reply-container {
-    float: right;
-    clear: both;
-    /* background-color: rgb(214, 248, 187);
-    padding: 20px;
-    border-radius: 10px; */
-}
+
 
 .reply {
     background-color: rgb(214, 248, 187);
     padding: 20px;
     border-radius: 10px;
     margin: 20px;
+    float: right;
+    clear: both;
 }
 
 .chatbox {

@@ -42,36 +42,44 @@ $("#input-button").click(function() {
         nuovo_messaggio.addClass('reply');
         // inserisco il testo dell'utente nella p "message-text"
         nuovo_messaggio.children('.message-text').text(messaggio);
-        // inserisco il nuovo messaggio nel contenitore dei messaggi di risposta
-        $('.reply-container').append(nuovo_messaggio);
+        // inserisco il nuovo messaggio nel contenitore dei messaggi della chat
+        $('.chat-container').append(nuovo_messaggio);
         // resetto l'input
         $('#input-text').val('');
-auto_reply();
     }
+    setTimeout(auto_reply, 1000);
 });
 
+//ad ogni inserimento di un messaggio, l’utente riceveràun “ok” come risposta, che apparirà dopo 1 secondo
 function auto_reply() {
     var messaggio = ('Ok');
     console.log(messaggio);
 
-
-
-        // faccio una copia del template per creare un nuovo messaggio
-        var nuovo_messaggio = $('.template .message').clone();
-        // aggiungo la classe "reply" al messaggio
-        nuovo_messaggio.addClass('user-chat');
-        // inserisco il testo dell'utente nella p "message-text"
-        nuovo_messaggio.children('.message-text').text(messaggio);
-        // inserisco il nuovo messaggio nel contenitore dei messaggi di user-chat
-        $('.chat-container').append(nuovo_messaggio);
-
-
+    // faccio una copia del template per creare un nuovo messaggio
+    var nuovo_messaggio = $('.template .message').clone();
+    // aggiungo la classe "user-chat" al messaggio
+    nuovo_messaggio.addClass('user-chat');
+    // inserisco il testo dell'utente nella p "message-text"
+    nuovo_messaggio.children('.message-text').text(messaggio);
+    // inserisco il nuovo messaggio nel contenitore dei messaggi della chat
+    $('.chat-container').append(nuovo_messaggio);
 
 }
 
-//
-//
-//
+
+// ​scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo icontatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> Scrivo“mar” rimangono solo Marco e Martina)
+$("#search").on("keyup", function() {
+   var value = $(this).val().toLowerCase();
+   $(".contacts-name *").filter(function() {
+     $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+   });
+ });
+
+
+
+
+
+
 // if (messaggio != '') {
 //     $('.reply-container').append("<p class=reply>" + messaggio + "</p>");
 //     $('#input-text').val('');
