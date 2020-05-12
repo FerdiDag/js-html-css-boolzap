@@ -11,9 +11,10 @@
 // });
 
 
-
+//recupero l'indice dei div contatti (devo associarli ognuno alla sua chat)
 $('div.contacts').click(function() {
-
+var currentIndex =  $(this).index();
+console.log(currentIndex);
 
 });
 
