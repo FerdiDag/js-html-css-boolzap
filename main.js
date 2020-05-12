@@ -46,29 +46,29 @@ $("#input-button").click(function() {
         $('.reply-container').append(nuovo_messaggio);
         // resetto l'input
         $('#input-text').val('');
-
+auto_reply();
     }
 });
 
-// function auto_reply() {
-//     var messaggio = ('Ok');
-//     console.log(messaggio);
-//
-//
-//
-//         // faccio una copia del template per creare un nuovo messaggio
-//         var nuovo_messaggio = $('.template .message').clone();
-//         // aggiungo la classe "reply" al messaggio
-//         nuovo_messaggio.addClass('user-chat');
-//         // inserisco il testo dell'utente nella p "message-text"
-//         nuovo_messaggio.children('.message-text').text(messaggio);
-//         // inserisco il nuovo messaggio nel contenitore dei messaggi di user-chat
-//         $('.user-chat-container').append(nuovo_messaggio);
-//
-//
-//
-// }
-//
+function auto_reply() {
+    var messaggio = ('Ok');
+    console.log(messaggio);
+
+
+
+        // faccio una copia del template per creare un nuovo messaggio
+        var nuovo_messaggio = $('.template .message').clone();
+        // aggiungo la classe "reply" al messaggio
+        nuovo_messaggio.addClass('user-chat');
+        // inserisco il testo dell'utente nella p "message-text"
+        nuovo_messaggio.children('.message-text').text(messaggio);
+        // inserisco il nuovo messaggio nel contenitore dei messaggi di user-chat
+        $('.chat-container').append(nuovo_messaggio);
+
+
+
+}
+
 //
 //
 //

@@ -224,19 +224,14 @@ body {
     padding-top: 50px;
 }
 
-.user-chat-container {
-    float: left;
-    clear: both;
-    /* background-color: rgb(255, 255, 255);
-    padding: 20px;
-    border-radius: 10px; */
-}
+
 
 .user-chat {
+    float: left;
+    clear: both;
     background-color: rgb(255, 255, 255);
     padding: 20px;
     border-radius: 10px;
-    margin: 20px;
 }
 
 .reply-container {
