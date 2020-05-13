@@ -11,12 +11,7 @@
 // });
 
 
-//recupero l'indice dei div contatti (devo associarli ognuno alla sua chat)
-$('div.contacts').click(function() {
-    var currentIndex = $(this).index();
-    console.log(currentIndex);
 
-});
 
 //per associare  la pressione del tasto enter nella textarea al bottone
 $("#input-text").keydown(function(event) {
@@ -44,7 +39,7 @@ $("#input-button").click(function() {
         // inserisco il testo dell'utente nella p "message-text"
         nuovo_messaggio.children('.message-text').text(messaggio);
         // inserisco il nuovo messaggio nel contenitore dei messaggi della chat
-        $('.chat-container').append(nuovo_messaggio);
+        $('.chat-container.active').append(nuovo_messaggio);
         // resetto l'input
         $('#input-text').val('');
         setTimeout(auto_reply, 1000);
@@ -64,14 +59,14 @@ function auto_reply() {
     // inserisco il testo dell'utente nella p "message-text"
     nuovo_messaggio.children('.message-text').text(messaggio);
     // inserisco il nuovo messaggio nel contenitore dei messaggi della chat
-    $('.chat-container').append(nuovo_messaggio);
+    $('.chat-container.active').append(nuovo_messaggio);
 
 }
 
 
 // ​scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo icontatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> Scrivo“mar” rimangono solo Marco e Martina)
-$("#search").on("keyup", function() {
-    var value = $(this).val().toLowerCase();
+$("#search").keyup(function() {
+    var value = $(this).val().trim().toLowerCase();
     console.log(value);
     $(".contacts").filter(function() {
         $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
@@ -92,6 +87,32 @@ $('#search').focus(function() {
 $('#search').blur(function() {
     $('.searchbar-container i').show();
 });
+
+
+
+
+
+
+//recupero l'indice dei div contatti (devo associarli ognuno alla sua chat)
+$('div.contacts').click(function() {
+    var currentIndex = $(this).index();
+    console.log(currentIndex);
+    //se c'è già un div con la classe active, la tolgo
+    $('div.contacts').removeClass('active');
+    //se c'è già una chat container con la classe active, la tolgo
+    $('.chat-container').removeClass('active');
+    var contacts = $('div.contacts').eq(currentIndex);
+    var chat = $('div.chat-container').eq(currentIndex);
+    console.log(chat);
+    var contactCurrent = $(this).addClass('active');
+    chat.addClass('active');
+
+
+});
+
+
+
+
 
 
 

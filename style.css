@@ -25,7 +25,6 @@ body {
     height: calc(100% - 50px);
     /* width: calc(100% - 500px); */
     width: 80%;
-
     /* border: 1px solid black; */
     z-index: 99999;
 }
@@ -141,8 +140,6 @@ body {
     justify-content: space-around;
 }
 
-
-
 /* inizio sezione contatti */
 .contacts {
     background-color: rgb(255, 255, 255);
@@ -205,7 +202,6 @@ body {
 
 .contact-name-icon-container {}
 
-
 /* inizio sezione chat parte destra */
 .chat {
     background-image: url("wallpaper.jpg");
@@ -219,8 +215,12 @@ body {
     width: 80%;
     margin: auto;
     padding-top: 50px;
+    display: none;
 }
 
+.chat-container.active {
+    display:block;
+}
 
 
 .user-chat {
@@ -230,8 +230,6 @@ body {
     padding: 20px;
     border-radius: 10px;
 }
-
-
 
 .reply {
     background-color: rgb(214, 248, 187);
