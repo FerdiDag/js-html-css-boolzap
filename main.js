@@ -13,8 +13,8 @@
 
 //recupero l'indice dei div contatti (devo associarli ognuno alla sua chat)
 $('div.contacts').click(function() {
-var currentIndex =  $(this).index();
-console.log(currentIndex);
+    var currentIndex = $(this).index();
+    console.log(currentIndex);
 
 });
 
@@ -47,8 +47,9 @@ $("#input-button").click(function() {
         $('.chat-container').append(nuovo_messaggio);
         // resetto l'input
         $('#input-text').val('');
+        setTimeout(auto_reply, 1000);
     }
-    setTimeout(auto_reply, 1000);
+
 });
 
 //ad ogni inserimento di un messaggio, l’utente riceveràun “ok” come risposta, che apparirà dopo 1 secondo
@@ -71,7 +72,8 @@ function auto_reply() {
 // ​scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo icontatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> Scrivo“mar” rimangono solo Marco e Martina)
 $("#search").on("keyup", function() {
     var value = $(this).val().toLowerCase();
-    $(".contacts-name *").filter(function() {
+    console.log(value);
+    $(".contacts-name * ").filter(function() {
         $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
 
     });
