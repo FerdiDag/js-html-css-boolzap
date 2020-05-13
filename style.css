@@ -222,13 +222,6 @@ body {
     display:block;
 }
 
-.chat-container-info {
-    display: none;
-}
-
-.chat-container-info.active {
-    display: block;
-}
 
 
 

@@ -95,9 +95,11 @@ $('#search').blur(function() {
 
 //recupero l'indice dei div contatti (devo associarli ognuno alla sua chat)
 $('div.contacts').click(function() {
-    var trovare = $(this).find('h4').text();
+    var nome = $(this).find('h4').text();
+    var immagine = $("img", this).attr("src");
 
-    console.log(trovare);
+        console.log(immagine);
+    console.log(nome);
     var currentIndex = $(this).index();
     console.log(currentIndex);
     //se c'è già un div con la classe active, la tolgo
@@ -106,22 +108,17 @@ $('div.contacts').click(function() {
     $('div.face-wrapper').removeClass('active');
     //se c'è già una chat container con la classe active, la tolgo
     $('.chat-container').removeClass('active');
-    //se c'è già una chat container-info con la classe active, la tolgo
-    $('div.chat-container-info').removeClass('active');
+
     var contacts = $('div.contacts').eq(currentIndex);
     var chat = $('div.chat-container').eq(currentIndex);
     var avatar = $('div.face-wrapper').eq(currentIndex);
-    var chatContainerInfo = $('div.chat-container-info').eq(currentIndex);
-        console.log(chatContainerInfo);
     var contactCurrent = $(this).addClass('active');
     chat.addClass('active');
     avatar.addClass('active');
-    chatContainerInfo.addClass('active');
-    $('div.chat-container-info.active').append("<h4 class=name>" + trovare + "</h4>");
-
-
-
-
+    //aggiungo il nome della contactlist di sinistra in alto a destra
+    $('.chat-container-info').html("<h4 class=name>" + nome + "</h4>");
+// $('#').attr("src", );
+$('#image-change').attr('src, immagine');
 });
 
 
