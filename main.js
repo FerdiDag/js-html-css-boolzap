@@ -117,13 +117,16 @@ $('div.contacts').click(function() {
     avatar.addClass('active');
     //aggiungo il nome della contactlist di sinistra in alto a destra
     $('.chat-container-info').html("<h4 class=name>" + nome + "</h4>");
+    $('.chat-container-info').append("<p class=name-sub>" + 'Ultimo accesso alle' + "</p>");
 // $('#').attr("src", );
 $('#image-change').attr("src", immagine);
 });
 
 
 
-
+$('div.messages-alert').click(function(){
+    $(this).hide();
+});
 
 
 
