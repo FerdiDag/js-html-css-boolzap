@@ -118,7 +118,7 @@ $('div.contacts').click(function() {
     //aggiungo il nome della contactlist di sinistra in alto a destra
     $('.chat-container-info').html("<h4 class=name>" + nome + "</h4>");
 // $('#').attr("src", );
-$('#image-change').attr('src, immagine');
+$('#image-change').attr("src", immagine);
 });
 
 
