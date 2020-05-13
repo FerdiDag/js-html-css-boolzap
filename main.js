@@ -73,7 +73,7 @@ function auto_reply() {
 $("#search").on("keyup", function() {
     var value = $(this).val().toLowerCase();
     console.log(value);
-    $(".contacts-name * ").filter(function() {
+    $(".contacts").filter(function() {
         $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
 
     });
