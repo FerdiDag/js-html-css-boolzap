@@ -123,10 +123,17 @@ $('#image-change').attr("src", immagine);
 });
 
 
+//triggero il click sul div a sinistra con la classe active
+$("div.contacts.active").trigger('click');
 
+
+
+//nascondo alert blu al click
 $('div.messages-alert').click(function(){
     $(this).hide();
 });
+
+
 
 
 
