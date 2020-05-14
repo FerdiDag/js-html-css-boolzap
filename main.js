@@ -137,11 +137,15 @@ $('div.messages-alert').click(function() {
 // $("div.chat").scroller();
 
 //mostro icona del dropdown quando passo col mouse, la nascondo quando esco col mouse
-$(".chat-container").hover(function() {
-    $('.message-options').show();
-}, function() {
-    $( '.message-options').hide();
+$('.chat-container').on('mouseenter', '.message',  function() {
+
+        $('.message-options').show();
 });
+$('.chat-container').on('mouseleave', '.message',  function() {
+
+        $('.message-options').hide();
+});
+
 
 
 
