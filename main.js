@@ -137,17 +137,17 @@ $('div.messages-alert').click(function() {
 // $("div.chat").scroller();
 
 //mostro icona del dropdown quando passo col mouse, la nascondo quando esco col mouse
-$(".chat-container").hover(function(){
-  $('.message .message-options').show();
-  }, function(){
-   $('.message .message-options').hide();
+$(".chat-container").hover(function() {
+    $('.message .message-options').show();
+}, function() {
+    $('.message .message-options').hide();
 });
 
 
 
 
 // intercetto il click sull'icona del dropdown del messaggio
-$('.chat-container').on('click', '.message-options', function(){
+$('.chat-container').on('click', '.message-options', function() {
     // visualizzo il div "message-options-panel" corrispondente al messaggio su cui ho cliccato e aggiungo la classe active
     $(this).next('.message-options-panel').toggleClass('active');
 });
@@ -159,7 +159,7 @@ $('.chat-container').on('mouseleave', '.message', function() {
 });
 
 // intercetto il click sulla voce "cancella messaggio"
-$('.chat-container').on('click', '.message-destroy', function(){
+$('.chat-container').on('click', '.message-destroy', function() {
     // $(this).parent().siblings('.message-text').text('messaggio eliminato!');
     // cancello il messaggio corrispondente
     $(this).closest('.message').remove();
