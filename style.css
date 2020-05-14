@@ -25,6 +25,7 @@ body {
     height: calc(100% - 50px);
     /* width: calc(100% - 500px); */
     width: 80%;
+    min-width: 900px;
     /* border: 1px solid black; */
     z-index: 99999;
 }
@@ -219,11 +220,8 @@ body {
 }
 
 .chat-container.active {
-    display:block;
+    display: block;
 }
-
-
-
 
 .user-chat {
     float: left;
@@ -231,6 +229,7 @@ body {
     background-color: rgb(255, 255, 255);
     padding: 20px;
     border-radius: 10px;
+    position: relative;
 }
 
 .reply {
@@ -240,6 +239,7 @@ body {
     margin: 20px;
     float: right;
     clear: both;
+    position: relative;
 }
 
 .chatbox {
@@ -293,4 +293,42 @@ body {
 
 .template {
     display: none;
+}
+
+f-right {
+    color: #B6B9BB;
+    font-size: 12px;
+}
+
+.message-options.active {
+    display: block;
+}
+
+.message .message-options {
+    display: none;
+    color: #B6B9BB;
+    cursor: pointer;
+}
+
+.message-options-panel {
+    display: none;
+    position: absolute;
+    bottom: -75px;
+    width: 150px;
+    height: 80px;
+    background: white;
+    left: 0;
+}
+
+.message-options-panel.active {
+    display: block;
+}
+
+.message-options-panel>div {
+    cursor: pointer;
+    width: 100%;
+    height: 50%;
+    line-height: 40px;
+    font-size: 14px;
+    text-align: center;
 }

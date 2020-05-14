@@ -98,7 +98,7 @@ $('div.contacts').click(function() {
     var nome = $(this).find('h4').text();
     var immagine = $("img", this).attr("src");
 
-        console.log(immagine);
+    console.log(immagine);
     console.log(nome);
     var currentIndex = $(this).index();
     console.log(currentIndex);
@@ -118,26 +118,49 @@ $('div.contacts').click(function() {
     //aggiungo il nome della contactlist di sinistra in alto a destra
     $('.chat-container-info').html("<h4 class=name>" + nome + "</h4>");
     $('.chat-container-info').append("<p class=name-sub>" + 'Ultimo accesso alle' + "</p>");
-// $('#').attr("src", );
-$('#image-change').attr("src", immagine);
+    // $('#').attr("src", );
+    $('#image-change').attr("src", immagine);
 });
 
 
-//triggero il click sul div a sinistra con la classe active
+//triggero il click sul div a sinistra con la classe active quando carica la pagina
 $("div.contacts.active").trigger('click');
 
 
 
 //nascondo alert blu al click
-$('div.messages-alert').click(function(){
+$('div.messages-alert').click(function() {
     $(this).hide();
+});
+
+
+// $("div.chat").scroller();
+
+//mostro icona del dropdown quando passo col mouse, la nascondo quando esco col mouse
+$(".chat-container").hover(function(){
+  $('.message .message-options').show();
+  }, function(){
+   $('.message .message-options').hide();
 });
 
 
 
 
+// intercetto il click sull'icona del dropdown del messaggio
+$('.chat-container').on('click', '.message-options', function(){
+    // visualizzo il div "message-options-panel" corrispondente al messaggio su cui ho cliccato e aggiungo la classe active
+    $(this).next('.message-options-panel').toggleClass('active');
+});
 
-// if (messaggio != '') {
-//     $('.reply-container').append("<p class=reply>" + messaggio + "</p>");
-//     $('#input-text').val('');
-// }
+// quando esco con il mouse da un messaggio, chiudo un eventuale pannello di opzioni aperto
+$('.chat-container').on('mouseleave', '.message', function() {
+    // tolgo la classe active  al pannello delle opzioni di questo messaggio
+    $('.message-options-panel.active').removeClass('active');
+});
+
+// intercetto il click sulla voce "cancella messaggio"
+$('.chat-container').on('click', '.message-destroy', function(){
+    // $(this).parent().siblings('.message-text').text('messaggio eliminato!');
+    // cancello il messaggio corrispondente
+    $(this).closest('.message').remove();
+});
