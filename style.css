@@ -8,6 +8,11 @@ body {
     font-family: 'Gothic A1', sans-serif;
 }
 
+i {
+    color: rgb(177, 177, 177);
+    font-size: 21px;
+}
+
 .page-wrapper {
     width: 100%;
     height: 100vh;
@@ -224,9 +229,20 @@ body {
     display: none;
 }
 
+.chat-container-info {
+    width: 80%;
+}
+
 .chat-container.active {
     display: block;
 }
+
+.contact-name-icon-container {
+    display: flex;
+    width: 10%;
+    justify-content: space-around;
+}
+
 
 .user-chat {
     float: left;

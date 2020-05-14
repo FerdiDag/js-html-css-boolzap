@@ -138,9 +138,9 @@ $('div.messages-alert').click(function() {
 
 //mostro icona del dropdown quando passo col mouse, la nascondo quando esco col mouse
 $(".chat-container").hover(function() {
-    $('.message .message-options').show();
+    $('.message-options').show();
 }, function() {
-    $('.message .message-options').hide();
+    $( '.message-options').hide();
 });
 
 
