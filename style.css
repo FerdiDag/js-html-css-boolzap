@@ -153,6 +153,7 @@ i {
     height: 80px;
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
 .contacts-wrapper {
@@ -242,7 +243,6 @@ i {
     width: 10%;
     justify-content: space-around;
 }
-
 
 .user-chat {
     float: left;

@@ -95,9 +95,10 @@ $('#search').blur(function() {
 
 //recupero l'indice dei div contatti (devo associarli ognuno alla sua chat)
 $('div.contacts').click(function() {
+    //recupero i nomi contatti
     var nome = $(this).find('h4').text();
+    //recupero l'immagine profilo dei contati
     var immagine = $("img", this).attr("src");
-
     console.log(immagine);
     console.log(nome);
     var currentIndex = $(this).index();
@@ -115,10 +116,10 @@ $('div.contacts').click(function() {
     var contactCurrent = $(this).addClass('active');
     chat.addClass('active');
     avatar.addClass('active');
-    //aggiungo il nome della contactlist di sinistra in alto a destra
+    //aggiungo il nome del contatto di sinistra, in alto a destra
     $('.chat-container-info').html("<h4 class=name>" + nome + "</h4>");
     $('.chat-container-info').append("<p class=name-sub>" + 'Ultimo accesso alle' + "</p>");
-    // $('#').attr("src", );
+    //cambio l'immagine in alto a destra con la variabile immagine
     $('#image-change').attr("src", immagine);
 });
 
@@ -136,14 +137,15 @@ $('div.messages-alert').click(function() {
 
 // $("div.chat").scroller();
 
+
 //mostro icona del dropdown quando passo col mouse, la nascondo quando esco col mouse
-$('.chat-container').on('mouseenter', '.message',  function() {
+$('.chat-container').on('mouseenter', '.message', function() {
 
-        $('.message-options').show();
+    $('.message-options').show();
 });
-$('.chat-container').on('mouseleave', '.message',  function() {
+$('.chat-container').on('mouseleave', '.message', function() {
 
-        $('.message-options').hide();
+    $('.message-options').hide();
 });
 
 
