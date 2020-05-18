@@ -1,15 +1,64 @@
-//
-// $('div.contacts').click(function() {
-//     var currentContact = $('.contacts.active');
-//     console.log( $('.contacts.active'));
-//     var nextContact = currentContact.next('.contacts');
-//     if (currentContact.hasClass('active')) {
-//         currentContact.removeClass('active');
-//         nextContact.addClass('active');
-//     }
-//
-// });
+$("#input-button").click(function() {
+    //prendo ciò che è stato scritto dall'utente nell'input e lo salvo in una variabile
 
+    var messaggio = $('#input-text').val();
+    console.log(messaggio);
+    // recupero la struttura html del template di base
+    var template_html = $('#template-messaggi').html();
+
+    // preparo la funzione da utilizzare per utilizzare il template
+    var template_function = Handlebars.compile(template_html);
+
+
+
+
+    if (!messaggio.replace(/\s/g, '').length) {
+        console.log('stringa non ok');
+    } else {
+        // tramite handlebars preparo l'html finale con i dati della chat
+
+        var chat = {
+            'testo-input': messaggio,
+            'classe': 'reply',
+        };
+        var html_finale = template_function(chat);
+        $('.chat-container.active').append(html_finale);
+
+    }
+
+    $('#input-text').val('');
+
+    setTimeout(auto_reply, 1000);
+});
+
+
+
+
+
+
+
+//ad ogni inserimento di un messaggio, l’utente riceveràun “ok” come risposta, che apparirà dopo 1 secondo
+function auto_reply() {
+
+
+
+    // recupero la struttura html del template di base
+    var template_html = $('#template-messaggi').html();
+    // preparo la funzione da utilizzare per utilizzare il template
+    var template_function = Handlebars.compile(template_html);
+    var chat = {
+        'testo-input': 'ok',
+        'classe': 'user-chat',
+
+
+    };
+    //tramite handlebars preparo l'html finale con i dati della chat
+    var html_finale = template_function(chat);
+
+    // appendo in pagina la chat
+    $('.chat-container.active').append(html_finale);
+
+}
 
 
 
@@ -23,45 +72,9 @@ $("#input-text").keydown(function(event) {
 
 });
 
-$("#input-button").click(function() {
-    //prendo ciò che è stato scritto dall'utente nell'input e lo salvo in una variabile
-    var messaggio = $('#input-text').val();
-    console.log(messaggio);
-    //se il messaggio non è vuoto, allora può essere speidto
 
-    if (!messaggio.replace(/\s/g, '').length) {
-        console.log('stringa non ok');
-    } else {
-        // faccio una copia del template per creare un nuovo messaggio
-        var nuovo_messaggio = $('.template .message').clone();
-        // aggiungo la classe "reply" al messaggio
-        nuovo_messaggio.addClass('reply');
-        // inserisco il testo dell'utente nella p "message-text"
-        nuovo_messaggio.children('.message-text').text(messaggio);
-        // inserisco il nuovo messaggio nel contenitore dei messaggi della chat
-        $('.chat-container.active').append(nuovo_messaggio);
-        // resetto l'input
-        $('#input-text').val('');
-        setTimeout(auto_reply, 1000);
-    }
 
-});
 
-//ad ogni inserimento di un messaggio, l’utente riceveràun “ok” come risposta, che apparirà dopo 1 secondo
-function auto_reply() {
-    var messaggio = ('Ok');
-    console.log(messaggio);
-
-    // faccio una copia del template per creare un nuovo messaggio
-    var nuovo_messaggio = $('.template .message').clone();
-    // aggiungo la classe "user-chat" al messaggio
-    nuovo_messaggio.addClass('user-chat');
-    // inserisco il testo dell'utente nella p "message-text"
-    nuovo_messaggio.children('.message-text').text(messaggio);
-    // inserisco il nuovo messaggio nel contenitore dei messaggi della chat
-    $('.chat-container.active').append(nuovo_messaggio);
-
-}
 
 
 // ​scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo icontatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> Scrivo“mar” rimangono solo Marco e Martina)
