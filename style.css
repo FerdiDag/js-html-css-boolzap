@@ -313,8 +313,6 @@ i {
     color: rgb(177, 176, 175);
 }
 
-
-
 f-right {
     color: #B6B9BB;
     font-size: 12px;
@@ -326,7 +324,7 @@ f-right {
     cursor: pointer;
 }
 
-.message-options-panel {
+ .message-options-panel {
     display: none;
     position: absolute;
     bottom: -75px;

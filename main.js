@@ -17,10 +17,20 @@ $("#input-button").click(function() {
     } else {
         // tramite handlebars preparo l'html finale con i dati della chat
 
+
+
+
+
+
+
+
+
         var chat = {
             'testo-input': messaggio,
             'classe': 'reply',
         };
+
+        //sostituisce agli handlebars le proprietà dell'oggetto che hanno lo stesso nome
         var html_finale = template_function(chat);
         $('.chat-container.active').append(html_finale);
 
