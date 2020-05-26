@@ -164,11 +164,11 @@ $('div.messages-alert').click(function() {
 //mostro icona del dropdown quando passo col mouse, la nascondo quando esco col mouse
 $('.chat-container').on('mouseenter', '.message', function() {
 
-    $('.message-options').show();
+    $('.message-options', this).show();
 });
 $('.chat-container').on('mouseleave', '.message', function() {
 
-    $('.message-options').hide();
+    $('.message-options', this).hide();
 });
 
 
